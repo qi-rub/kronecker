@@ -1,4 +1,4 @@
-# A Maple package for Kronecker coefficients [![arXiv](http://img.shields.io/badge/arXiv-1601.04325-blue.svg?style=flat)](http://arxiv.org/abs/1601.04325)
+# A Maple package for Kronecker coefficients [![arXiv](http://img.shields.io/badge/arXiv-1601.04325-blue.svg?style=flat)](http://arxiv.org/abs/1601.04325) [![download](https://img.shields.io/badge/download-zip-red.svg?style=flat)](https://github.com/catch22/kronecker/zipball/master)
 
 `Kronecker` is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by [Baldoni-Vergne (2016)](http://arxiv.org/abs/1601.04325). `Kronecker` works just as well symbolically, computing *dilated* or *stretched* Kronecker coefficients g(kλ,kμ,kν) and even the entire *quasipolynomial* on a polyhedral chamber of (λ,μ,ν)'s.
 
@@ -16,7 +16,7 @@ Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://
 If you instead see an error message please let us now by [opening a new bug report](https://github.com/catch22/kronecker/issues/new).
 The worksheet also contains the following illustrative examples demonstrating the functionality of the Kronecker package:
 
-## Calculating individual coefficients
+## Calculate individual coefficients
 
 Pass a list of partitions [λ,μ,ν] to `Kronecker` to compute the corresponding Kronecker coefficient g(λ,μ,ν):
 
@@ -36,7 +36,7 @@ Pass a list of partitions [λ,μ,ν] to `Kronecker` to compute the corresponding
 
 This last example is a branching problem for SL(9) and hence might take a little while to compute (around 6 minutes).
 
-## Calculating dilated coefficients
+## Calculate dilated coefficients
 
 By providing an additional symbolic parameter to `Kronecker`, we can instead compute the dilated Kronecker coefficient, i.e., the quasipolynomial function p(k) = g(kλ,kμ,kν):
 
@@ -74,7 +74,7 @@ We can also probe individual cosets by using the `coset` option:
 
 The last example shows that the `Kronecker` package also supports iterated Kronecked coefficients indexed by four or more partitions.
 
-## Calculating quasipolynomials on a chamber
+## Calculate quasipolynomials on a chamber
 
 Lastly, by providing three symbolic variables we can compute the entire quasipolynomial on the corresponding chamber:
 
@@ -115,19 +115,3 @@ If you find this software useful in your research please consider citing our pap
 - [barvikron](https://github.com/catch22/barvikron): a Python package for efficiently computing Kronecker coefficients (using Barvinok's algorithm to evaluate characters rather than the iterated residues used here)
 - [LiE](http://wwwmathlabo.univ-poitiers.fr/~maavl/LiE/): a computer algebra system for reductive Lie group computations
 - [SageMath](http://sagemath.org/): a computer algebra system which includes support for [symmetric functions](http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/sf/sfa.html#sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic_Element.itensor)
-
-
-<!--
-
-# Advanced usage
-
-To run the built-in tests, load `Tests/TestInternal.mpl` and `Tests/TestCoefficients.mpl`.
-
--->
-
-
-<!--
-
-Add benchmarking results.
-
--->
