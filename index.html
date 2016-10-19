@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Kronecker by catch22</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Kronecker</h1>
+        <p>A Maple package for Kronecker coefficients</p>
+        <p class="view"><a href="https://github.com/catch22/kronecker">View the Project on GitHub <small>catch22/kronecker</small></a></p>
+        <ul>
+          <li><a href="https://github.com/catch22/kronecker/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/catch22/kronecker/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/catch22/kronecker">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="a-maple-package-for-kronecker-coefficients--" class="anchor" href="#a-maple-package-for-kronecker-coefficients--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A Maple package for Kronecker coefficients <a href="http://arxiv.org/abs/1601.04325"><img src="http://img.shields.io/badge/arXiv-1601.04325-blue.svg?style=flat" alt="arXiv"></a> <a href="https://github.com/catch22/kronecker/releases/download/v1.0/Kronecker-v1.0.zip"><img src="https://img.shields.io/badge/download-v1.0-red.svg?style=flat" alt="download"></a>
+</h1>
+
+<p><code>Kronecker</code> is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by <a href="http://arxiv.org/abs/1601.04325">Baldoni-Vergne (2016)</a>. <code>Kronecker</code> works just as well symbolically, computing <em>dilated</em> or <em>stretched</em> Kronecker coefficients g(kλ,kμ,kν) and even the entire <em>quasipolynomial</em> on a polyhedral chamber of (λ,μ,ν)'s.</p>
+
+<h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h1>
+
+<p>Download <a href="https://github.com/catch22/kronecker/releases/download/v1.0/Kronecker-v1.0.zip"><strong>Kronecker-v1.0.zip</strong></a>, unpack the zip file, and run the <code>GettingStarted.mw</code> worksheet.
+You should see the following code and output at the top of the file:</p>
+
+<pre lang="maple"><code>&gt; restart:
+  read "Kronecker.mpl":
+
+Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://github.com/catch22/kronecker for more information).
+</code></pre>
+
+<p>If you instead see an error message please let us now by <a href="https://github.com/catch22/kronecker/issues/new">opening a new bug report</a>.
+The worksheet also contains the following illustrative examples demonstrating the functionality of the Kronecker package:</p>
+
+<h2>
+<a id="calculating-individual-coefficients" class="anchor" href="#calculating-individual-coefficients" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Calculating individual coefficients</h2>
+
+<p>Pass a list of partitions [λ,μ,ν] to <code>Kronecker</code> to compute the corresponding Kronecker coefficient g(λ,μ,ν):</p>
+
+<pre lang="maple"><code>&gt; Kronecker([[131, 39, 19, 11], [110, 90], [120, 80]]);
+
+70
+
+&gt; Kronecker([[15, 10, 9, 4, 3, 2], [21, 14, 8], [27, 16]]);
+
+148
+
+&gt; Kronecker([[400000, 200000, 100000], [500000, 100000, 100000], [300000, 200000, 200000]]);
+
+1596403568763802677125206373630515086
+</code></pre>
+
+<p>This last example is a branching problem for SL(9) and hence might take a little while to compute (around 6 minutes).</p>
+
+<h2>
+<a id="calculating-dilated-coefficients" class="anchor" href="#calculating-dilated-coefficients" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Calculating dilated coefficients</h2>
+
+<p>By providing an additional symbolic parameter to <code>Kronecker</code>, we can instead compute the dilated Kronecker coefficient, i.e., the quasipolynomial function p(k) = g(kλ,kμ,kν):</p>
+
+<pre lang="maple"><code>&gt; Kronecker([[10, 6, 2], [10, 8], [11, 7]], k);
+
+3/8 + (5/8)*(-1)^k + (3/2)*k + (7/4)*k^2
+
+&gt; Kronecker([[1, 1, 1, 1, 1, 1], [2, 2, 2], [3, 3]], k);
+
+1
+</code></pre>
+
+<p>We can also probe individual cosets by using the <code>coset</code> option:</p>
+
+<pre lang="maple"><code>&gt; Kronecker([[1, 1, 1, 1], [1, 1, 1, 1], [2, 2]], k, coset = 0);
+
+(1/6)*k + 1
+
+&gt; Kronecker([[1, 1, 1, 1], [1, 1, 1, 1], [2, 2]], k, coset = 1);
+
+-1/6 + (1/6)*k
+</code></pre>
+
+<pre lang="maple"><code>&gt; Kronecker([[1, 1], [1, 1], [1, 1], [1, 1]], k, coset = 0);
+
+(2/3)*k + (1/6)*k^2 + (1/72)*k^3 + 1
+
+&gt; Kronecker([[1, 1], [1, 1], [1, 1], [1, 1]], k, coset = 1);
+
+5/18 + (13/24)*k + (1/6)*k^2 + (1/72)*k^3
+</code></pre>
+
+<p>The last example shows that the <code>Kronecker</code> package also supports iterated Kronecked coefficients indexed by four or more partitions.</p>
+
+<h2>
+<a id="calculating-quasipolynomials-on-a-chamber" class="anchor" href="#calculating-quasipolynomials-on-a-chamber" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Calculating quasipolynomials on a chamber</h2>
+
+<p>Lastly, by providing three symbolic variables we can compute the entire quasipolynomial on the corresponding chamber:</p>
+
+<pre lang="maple"><code>&gt; Kronecker([[132, 38, 19, 11], [110, 90], [120, 80]], [lambda, mu, nu]);
+
+3/4 + (1/8)*(-1)^(lambda[4]+mu[1]+lambda[2]+nu[1]) - (1/2)*lambda[4]*mu[1] - (1/2)*lambda[4]*lambda[2] + (1/4)*lambda[4]^2 + (1/2)*lambda[4]*nu[1] + (1/2)*lambda[2] + (1/2)*lambda[3] - lambda[4] + (1/2)*mu[1] - (1/2)*nu[1] - (1/4)*lambda[3]^2 - (1/2)*lambda[3]*nu[1] + (1/2)*lambda[3]*mu[1] + (1/2)*lambda[3]*lambda[2] + (1/8)*(-1)^(lambda[3]+mu[1]+lambda[2]+nu[1])
+</code></pre>
+
+<p>Sometimes, the chamber and hence the quasipolynomial are not uniquely determined, because the given partition triple sits on a wall between two chambers.
+In other cases, such as in the following, the chamber is uniquely determined, but <code>Kronecker</code> is not aware of it since the partition triple sits on the boundary of the Kirwan cone.
+In either case the <code>forceperturb</code> option can be used to go ahead and select a chamber:</p>
+
+<pre lang="maple"><code>&gt; factor(Kronecker([[288, 192, 174, 120, 30, 6], [343, 270, 197], [654, 156]], [lambda, mu, nu], forceperturb = true));
+
+1/5040 * (-nu[1]+7+lambda[1]+lambda[2]+lambda[3]) * (-nu[1]+6+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+5+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+4+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+3+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+2+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+1+lambda[3]+lambda[2]+lambda[1]) * (lambda[1]+lambda[2]+lambda[4]+lambda[5]-mu[1]-mu[2]+1)
+</code></pre>
+
+<h1>
+<a id="attribution" class="anchor" href="#attribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Attribution</h1>
+
+<p>If you find this software useful in your research please consider citing our paper:</p>
+
+<pre><code>@article{kronecker,
+  title={Computation of dilated Kronecker coefficients},
+  author={Baldoni, Velleda and Vergne, Mich{\`e}le},
+  journal={arXiv preprint arXiv:1601.04325},
+  year={2016},
+  note={Software available at \url{https://github.com/catch22/kronecker/}.},
+}
+</code></pre>
+
+<h1>
+<a id="see-also" class="anchor" href="#see-also" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>See also</h1>
+
+<ul>
+<li>
+<a href="https://github.com/catch22/barvikron">barvikron</a>: a Python package for efficiently computing Kronecker coefficients (using Barvinok's algorithm to evaluate characters rather than the iterated residues used here)</li>
+<li>
+<a href="http://wwwmathlabo.univ-poitiers.fr/%7Emaavl/LiE/">LiE</a>: a computer algebra system for reductive Lie group computations</li>
+<li>
+<a href="http://sagemath.org/">SageMath</a>: a computer algebra system which includes support for <a href="http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/sf/sfa.html#sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic_Element.itensor">symmetric functions</a>
+</li>
+</ul>
+
+
+
+
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/catch22">catch22</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
