@@ -105,7 +105,7 @@ If you find this software useful in your research please consider citing our pap
   author={Baldoni, Velleda and Vergne, Mich{\`e}le},
   journal={arXiv preprint arXiv:1601.04325},
   year={2016},
-  note={Software available at \url{https://github.com/catch22/kronecker/}.},
+  note={Software available at \url{https://catch22.github.io/kronecker/}.},
 }
 ```
 
