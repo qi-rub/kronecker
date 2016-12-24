@@ -138,15 +138,16 @@ Tests[HyperplaneNormals] := proc()
 end proc;
 
 Tests[Indices] := proc()
-  local ns, GLToSL, R, DeltaPlusK_SL, AlphasPolarized_nodup, RootLatticeMatrix;
+  local ns, GLToSL, R, Psi, DeltaPlusK_SL, PsiWithoutDeltaPlusK_nodup, RootLatticeMatrix;
   ns := [3, 2];
   GLToSL := Kronecker:-GLToSLMatrix(ns);
   R := Kronecker:-RestrictionMatrix(ns);
+  Psi := [seq(GLToSL . R . Vector(alpha), alpha=Kronecker:-PositiveRoots(mul(ns)))];
   DeltaPlusK_SL := [seq(GLToSL . alpha, alpha=Kronecker:-PositiveRootsProduct(ns))];
-  AlphasPolarized_nodup := Kronecker:-UniqueVectorList(Kronecker:-RemoveVectorsFromList(DeltaPlusK_SL, [seq(GLToSL . R . Vector(alpha), alpha=Kronecker:-PositiveRoots(mul(ns)))], strict=false));
+  PsiWithoutDeltaPlusK_nodup := Kronecker:-UniqueVectorList(Kronecker:-RemoveVectorsFromList(DeltaPlusK_SL, Psi, strict=false));
   RootLatticeMatrix := LinearAlgebra:-IdentityMatrix(add(ns) - numelems(ns));
-  return [Kronecker:-Indices(mul(ns), false, ns, AlphasPolarized_nodup, RootLatticeMatrix, use_database = true)]
-       = [Kronecker:-Indices(mul(ns), false, ns, AlphasPolarized_nodup, RootLatticeMatrix, use_database = false)];
+  return [Kronecker:-Indices(mul(ns), false, ns, PsiWithoutDeltaPlusK_nodup, RootLatticeMatrix, use_database = true)]
+       = [Kronecker:-Indices(mul(ns), false, ns, PsiWithoutDeltaPlusK_nodup, RootLatticeMatrix, use_database = false)];
 end proc;
 
 ##############################################################################
