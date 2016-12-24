@@ -549,11 +549,11 @@ Kronecker := proc(parts, sym := 1, { forceperturb := false, coset := NULL, keept
   local R, GLToSL, dim;
   local DeltaPlusG, DeltaPlusL, DeltaU, DeltaPlusK_SL, RootLatticeMatrix;
   local WeylG, WeylL, WeylCosets;
-  local Psi_nodup, zero;
-  local A, q, qCosets, T, Alphas, AlphasPolarized_nodup, d, ds;
+  local Psi, Psi_nodup, zero;
+  local A, q, qCosets, T, PsiWithoutDeltaPlusK_nodup, d, ds;
   local lambda_good, mu_good, lambda_tope, mu_tope, lambda, mu, lambda_coset, mu_coset, vars, assumptions;
   local V_tope, V_numeric;
-  local w, w_index, V, V_coset, AlphasPolarized_trimmed, qCosets_trimmed, sigmas, sigma_abs_dets, sigma_invs, sigma_invs_times_abs_det_transposed, sigma, Z_from_U, g, res, gamma, gamma_inv, gamma_vec, gamma_res, i, j, PI, thetaq;
+  local w, w_index, V, V_coset, Alphas, AlphasPolarized_nodup, AlphasPolarized_trimmed, qCosets_trimmed, sigmas, sigma_abs_dets, sigma_invs, sigma_invs_times_abs_det_transposed, sigma, Z_from_U, g, res, gamma, gamma_inv, gamma_vec, gamma_res, i, j, PI, thetaq;
   local st;
 
   # startup
@@ -575,7 +575,7 @@ Kronecker := proc(parts, sym := 1, { forceperturb := false, coset := NULL, keept
   else
     onerect := false;
   end if;
-  
+
   # compute restriction and GL->SL matrices
   userinfo(5, Kronecker, "Computing restriction and GL->SL matrices...");
   R := RestrictionMatrix(ns);
@@ -602,8 +602,8 @@ Kronecker := proc(parts, sym := 1, { forceperturb := false, coset := NULL, keept
   end if;
 
   # compute ordered set of nonzero restricted roots
-  Psi_nodup := [seq(GLToSL . R . alpha, alpha=DeltaPlusG)];
-  Psi_nodup := UniqueVectorList(Psi_nodup);
+  Psi := [seq(GLToSL . R . alpha, alpha=DeltaPlusG)];
+  Psi_nodup := UniqueVectorList(Psi);
   if numelems(select(IsZeroVector, Psi_nodup)) > 0 then
     error "TODO: Zero vector after restriction. Should be fine, but I want to debug this once.";
   end if;
@@ -621,9 +621,8 @@ Kronecker := proc(parts, sym := 1, { forceperturb := false, coset := NULL, keept
   A := HyperplaneNormals(ns, Psi_nodup);
 
   # compute index (we do not use Psi_nodup but the following smaller system; note that it is a subset of Psi_nodup and hence automatically polarized with respect to the latter)
-  Alphas := [seq(GLToSL . R . Vector(alpha), alpha=DeltaU)];
-  AlphasPolarized_nodup := UniqueVectorList(RemoveVectorsFromList(DeltaPlusK_SL, Alphas, strict=false));
-  ds, q := Indices(nz, onerect, ns, AlphasPolarized_nodup, RootLatticeMatrix);
+  PsiWithoutDeltaPlusK_nodup := UniqueVectorList(RemoveVectorsFromList(DeltaPlusK_SL, Psi, strict=false));
+  ds, q := Indices(nz, onerect, ns, PsiWithoutDeltaPlusK_nodup, RootLatticeMatrix);
   qCosets := {};
   for d in ds do
     T := combinat:-cartprod([seq([q/d*seq(0..d-1)], i = 1 .. dim)]);
