@@ -17,14 +17,14 @@
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  false
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="" href="#" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -41,7 +41,7 @@
             
   <div class="section" id="a-maple-package-for-kronecker-coefficients-arxiv-download">
 <span id="a-maple-package-for-kronecker-coefficients-arxiv-download"></span><h1>A Maple package for Kronecker coefficients <a class="reference external" href="http://arxiv.org/abs/1601.04325"><img alt="arXiv" src="http://img.shields.io/badge/arXiv-1601.04325-blue.svg?style=flat" /></a> <a class="reference external" href="https://github.com/catch22/kronecker/zipball/master"><img alt="download" src="https://img.shields.io/badge/download-zip-red.svg?style=flat" /></a><a class="headerlink" href="#a-maple-package-for-kronecker-coefficients-arxiv-download" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal"><span class="pre">Kronecker</span></code> is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by <a class="reference external" href="http://arxiv.org/abs/1601.04325">Baldoni-Vergne (2016)</a>. <code class="docutils literal"><span class="pre">Kronecker</span></code> works just as well symbolically, computing <em>dilated</em> or <em>stretched</em> Kronecker coefficients g(kλ,kμ,kν) and even the entire <em>quasipolynomial</em> on a polyhedral chamber of (λ,μ,ν)&#8217;s.</p>
+<p><code class="docutils literal"><span class="pre">Kronecker</span></code> is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by <a class="reference external" href="http://arxiv.org/abs/1601.04325">Baldoni-Vergne-Walter (2017)</a>. <code class="docutils literal"><span class="pre">Kronecker</span></code> works just as well symbolically, computing <em>dilated</em> or <em>stretched</em> Kronecker coefficients g(kλ,kμ,kν) and even the entire <em>quasipolynomial</em> on a polyhedral chamber of (λ,μ,ν)&#8217;s.</p>
 </div>
 <div class="section" id="getting-started">
 <span id="getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
@@ -130,9 +130,11 @@ In either case the <code class="docutils literal"><span class="pre">forceperturb
 <div class="highlight-default"><div class="highlight"><pre><span></span>@article{kronecker,
   title={Computation of dilated Kronecker coefficients},
   author={Baldoni, Velleda and Vergne, Mich{\`e}le},
-  journal={arXiv preprint arXiv:1601.04325},
-  year={2016},
-  note={Software available at \url{https://catch22.github.io/kronecker/}.},
+  journal={Journal of Symbolic Computation},
+  year={2017},
+  doi={10.1016/j.jsc.2017.03.005},
+  eprint={1601.04325},
+  note={In press. With an appendix by Michael Walter. Software available at \url{https://catch22.github.io/kronecker/}.},
 }
 </pre></div>
 </div>
