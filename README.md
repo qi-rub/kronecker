@@ -1,6 +1,6 @@
 # A Maple package for Kronecker coefficients [![arXiv](http://img.shields.io/badge/arXiv-1601.04325-blue.svg?style=flat)](http://arxiv.org/abs/1601.04325) [![download](https://img.shields.io/badge/download-zip-red.svg?style=flat)](https://github.com/catch22/kronecker/zipball/master)
 
-`Kronecker` is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by [Baldoni-Vergne (2016)](http://arxiv.org/abs/1601.04325). `Kronecker` works just as well symbolically, computing *dilated* or *stretched* Kronecker coefficients g(kλ,kμ,kν) and even the entire *quasipolynomial* on a polyhedral chamber of (λ,μ,ν)'s.
+`Kronecker` is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by [Baldoni-Vergne-Walter (2017)](http://arxiv.org/abs/1601.04325). `Kronecker` works just as well symbolically, computing *dilated* or *stretched* Kronecker coefficients g(kλ,kμ,kν) and even the entire *quasipolynomial* on a polyhedral chamber of (λ,μ,ν)'s.
 
 
 # Getting started
@@ -103,9 +103,11 @@ If you find this software useful in your research please consider citing our pap
 @article{kronecker,
   title={Computation of dilated Kronecker coefficients},
   author={Baldoni, Velleda and Vergne, Mich{\`e}le},
-  journal={arXiv preprint arXiv:1601.04325},
-  year={2016},
-  note={Software available at \url{https://catch22.github.io/kronecker/}.},
+  journal={Journal of Symbolic Computation},
+  year={2017},
+  doi={10.1016/j.jsc.2017.03.005},
+  eprint={1601.04325},
+  note={In press. With an appendix by Michael Walter. Software available at \url{https://catch22.github.io/kronecker/}.},
 }
 ```
 
