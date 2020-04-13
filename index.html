@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
     <title>A Maple package for Kronecker coefficients</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  false,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="search" title="Search" href="search.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -31,125 +19,127 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="a-maple-package-for-kronecker-coefficients-arxiv-download">
-<span id="a-maple-package-for-kronecker-coefficients-arxiv-download"></span><h1>A Maple package for Kronecker coefficients <a class="reference external" href="http://arxiv.org/abs/1601.04325"><img alt="arXiv" src="http://img.shields.io/badge/arXiv-1601.04325-blue.svg?style=flat" /></a> <a class="reference external" href="https://github.com/catch22/kronecker/zipball/master"><img alt="download" src="https://img.shields.io/badge/download-zip-red.svg?style=flat" /></a><a class="headerlink" href="#a-maple-package-for-kronecker-coefficients-arxiv-download" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal"><span class="pre">Kronecker</span></code> is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by <a class="reference external" href="http://arxiv.org/abs/1601.04325">Baldoni-Vergne-Walter (2017)</a>. <code class="docutils literal"><span class="pre">Kronecker</span></code> works just as well symbolically, computing <em>dilated</em> or <em>stretched</em> Kronecker coefficients g(kλ,kμ,kν) and even the entire <em>quasipolynomial</em> on a polyhedral chamber of (λ,μ,ν)&#8217;s.</p>
+<h1>A Maple package for Kronecker coefficients <a class="reference external" href="http://arxiv.org/abs/1601.04325"><img alt="arXiv" src="https://img.shields.io/badge/arxiv-1601.04325-blue" /></a> <a class="reference external" href="https://github.com/amsqi/kronecker/zipball/master"><img alt="download" src="https://img.shields.io/badge/download-zip-red" /></a><a class="headerlink" href="#a-maple-package-for-kronecker-coefficients-arxiv-download" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by <a class="reference external" href="http://arxiv.org/abs/1601.04325">Baldoni-Vergne-Walter (2017)</a>. <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> works just as well symbolically, computing <em>dilated</em> or <em>stretched</em> Kronecker coefficients g(kλ,kμ,kν) and even the entire <em>quasipolynomial</em> on a polyhedral chamber of (λ,μ,ν)’s.</p>
 </div>
 <div class="section" id="getting-started">
-<span id="getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>Download the zip file <a class="reference external" href="https://github.com/catch22/kronecker/zipball/master"><strong>here</strong></a>, unpack it, and run the <code class="docutils literal"><span class="pre">GettingStarted.mw</span></code> worksheet.
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Download the zip file <a class="reference external" href="https://github.com/amsqi/kronecker/zipball/master"><strong>here</strong></a>, unpack it, and run the <code class="docutils literal notranslate"><span class="pre">GettingStarted.mw</span></code> worksheet.
 You should see the following code and output at the top of the file:</p>
-<div class="highlight-maple"><div class="highlight"><pre><span></span>&gt; restart:
+<div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; restart:
   read &quot;Kronecker.mpl&quot;:
 
-Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://github.com/catch22/kronecker for more information).
+Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://github.com/amsqi/kronecker for more information).
 </pre></div>
 </div>
-<p>If you instead see an error message please let us now by <a class="reference external" href="https://github.com/catch22/kronecker/issues/new">opening a new bug report</a>.
+<p>If you instead see an error message please let us now by <a class="reference external" href="https://github.com/amsqi/kronecker/issues/new">opening a new bug report</a>.
 The worksheet also contains the following illustrative examples demonstrating the functionality of the Kronecker package:</p>
 <div class="section" id="calculate-individual-coefficients">
-<span id="calculate-individual-coefficients"></span><h2>Calculate individual coefficients<a class="headerlink" href="#calculate-individual-coefficients" title="Permalink to this headline">¶</a></h2>
-<p>Pass a list of partitions [λ,μ,ν] to <code class="docutils literal"><span class="pre">Kronecker</span></code> to compute the corresponding Kronecker coefficient g(λ,μ,ν):</p>
-<div class="highlight-maple"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">131</span><span class="o">,</span> <span class="m">39</span><span class="o">,</span> <span class="m">19</span><span class="o">,</span> <span class="m">11</span><span class="o">],</span> <span class="o">[</span><span class="m">110</span><span class="o">,</span> <span class="m">90</span><span class="o">],</span> <span class="o">[</span><span class="m">120</span><span class="o">,</span> <span class="m">80</span><span class="o">]]);</span>
+<h2>Calculate individual coefficients<a class="headerlink" href="#calculate-individual-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>Pass a list of partitions [λ,μ,ν] to <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> to compute the corresponding Kronecker coefficient g(λ,μ,ν):</p>
+<div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[131, 39, 19, 11], [110, 90], [120, 80]]);
 
-<span class="m">70</span>
+70
 
-<span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">15</span><span class="o">,</span> <span class="m">10</span><span class="o">,</span> <span class="m">9</span><span class="o">,</span> <span class="m">4</span><span class="o">,</span> <span class="m">3</span><span class="o">,</span> <span class="m">2</span><span class="o">],</span> <span class="o">[</span><span class="m">21</span><span class="o">,</span> <span class="m">14</span><span class="o">,</span> <span class="m">8</span><span class="o">],</span> <span class="o">[</span><span class="m">27</span><span class="o">,</span> <span class="m">16</span><span class="o">]]);</span>
+&gt; Kronecker([[15, 10, 9, 4, 3, 2], [21, 14, 8], [27, 16]]);
 
-<span class="m">148</span>
+148
 
-<span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">400000</span><span class="o">,</span> <span class="m">200000</span><span class="o">,</span> <span class="m">100000</span><span class="o">],</span> <span class="o">[</span><span class="m">500000</span><span class="o">,</span> <span class="m">100000</span><span class="o">,</span> <span class="m">100000</span><span class="o">],</span> <span class="o">[</span><span class="m">300000</span><span class="o">,</span> <span class="m">200000</span><span class="o">,</span> <span class="m">200000</span><span class="o">]]);</span>
+&gt; Kronecker([[400000, 200000, 100000], [500000, 100000, 100000], [300000, 200000, 200000]]);
 
-<span class="m">1596403568763802677125206373630515086</span>
+1596403568763802677125206373630515086
 </pre></div>
 </div>
 <p>This last example is a branching problem for SL(9) and hence might take a little while to compute (around 6 minutes).</p>
 </div>
 <div class="section" id="calculate-dilated-coefficients">
-<span id="calculate-dilated-coefficients"></span><h2>Calculate dilated coefficients<a class="headerlink" href="#calculate-dilated-coefficients" title="Permalink to this headline">¶</a></h2>
-<p>By providing an additional symbolic parameter to <code class="docutils literal"><span class="pre">Kronecker</span></code>, we can instead compute the dilated Kronecker coefficient, i.e., the quasipolynomial function p(k) = g(kλ,kμ,kν):</p>
-<div class="highlight-maple"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">10</span><span class="o">,</span> <span class="m">6</span><span class="o">,</span> <span class="m">2</span><span class="o">],</span> <span class="o">[</span><span class="m">10</span><span class="o">,</span> <span class="m">8</span><span class="o">],</span> <span class="o">[</span><span class="m">11</span><span class="o">,</span> <span class="m">7</span><span class="o">]],</span> <span class="n">k</span><span class="o">);</span>
+<h2>Calculate dilated coefficients<a class="headerlink" href="#calculate-dilated-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>By providing an additional symbolic parameter to <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code>, we can instead compute the dilated Kronecker coefficient, i.e., the quasipolynomial function p(k) = g(kλ,kμ,kν):</p>
+<div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[10, 6, 2], [10, 8], [11, 7]], k);
 
-<span class="m">3</span><span class="o">/</span><span class="m">8</span> <span class="o">+</span> <span class="o">(</span><span class="m">5</span><span class="o">/</span><span class="m">8</span><span class="o">)*(-</span><span class="m">1</span><span class="o">)^</span><span class="n">k</span> <span class="o">+</span> <span class="o">(</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">k</span> <span class="o">+</span> <span class="o">(</span><span class="m">7</span><span class="o">/</span><span class="m">4</span><span class="o">)*</span><span class="n">k</span><span class="o">^</span><span class="m">2</span>
+3/8 + (5/8)*(-1)^k + (3/2)*k + (7/4)*k^2
 
-<span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">2</span><span class="o">,</span> <span class="m">2</span><span class="o">,</span> <span class="m">2</span><span class="o">],</span> <span class="o">[</span><span class="m">3</span><span class="o">,</span> <span class="m">3</span><span class="o">]],</span> <span class="n">k</span><span class="o">);</span>
+&gt; Kronecker([[1, 1, 1, 1, 1, 1], [2, 2, 2], [3, 3]], k);
 
-<span class="m">1</span>
+1
 </pre></div>
 </div>
-<p>We can also probe individual cosets by using the <code class="docutils literal"><span class="pre">coset</span></code> option:</p>
-<div class="highlight-maple"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">2</span><span class="o">,</span> <span class="m">2</span><span class="o">]],</span> <span class="n">k</span><span class="o">,</span> <span class="n">coset</span> <span class="o">=</span> <span class="m">0</span><span class="o">);</span>
+<p>We can also probe individual cosets by using the <code class="docutils literal notranslate"><span class="pre">coset</span></code> option:</p>
+<div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[1, 1, 1, 1], [1, 1, 1, 1], [2, 2]], k, coset = 0);
 
-<span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="o">)*</span><span class="n">k</span> <span class="o">+</span> <span class="m">1</span>
+(1/6)*k + 1
 
-<span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">2</span><span class="o">,</span> <span class="m">2</span><span class="o">]],</span> <span class="n">k</span><span class="o">,</span> <span class="n">coset</span> <span class="o">=</span> <span class="m">1</span><span class="o">);</span>
+&gt; Kronecker([[1, 1, 1, 1], [1, 1, 1, 1], [2, 2]], k, coset = 1);
 
-<span class="o">-</span><span class="m">1</span><span class="o">/</span><span class="m">6</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="o">)*</span><span class="n">k</span>
+-1/6 + (1/6)*k
 </pre></div>
 </div>
-<div class="highlight-maple"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">]],</span> <span class="n">k</span><span class="o">,</span> <span class="n">coset</span> <span class="o">=</span> <span class="m">0</span><span class="o">);</span>
+<div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[1, 1], [1, 1], [1, 1], [1, 1]], k, coset = 0);
 
-<span class="o">(</span><span class="m">2</span><span class="o">/</span><span class="m">3</span><span class="o">)*</span><span class="n">k</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="o">)*</span><span class="n">k</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">72</span><span class="o">)*</span><span class="n">k</span><span class="o">^</span><span class="m">3</span> <span class="o">+</span> <span class="m">1</span>
+(2/3)*k + (1/6)*k^2 + (1/72)*k^3 + 1
 
-<span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">],</span> <span class="o">[</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">]],</span> <span class="n">k</span><span class="o">,</span> <span class="n">coset</span> <span class="o">=</span> <span class="m">1</span><span class="o">);</span>
+&gt; Kronecker([[1, 1], [1, 1], [1, 1], [1, 1]], k, coset = 1);
 
-<span class="m">5</span><span class="o">/</span><span class="m">18</span> <span class="o">+</span> <span class="o">(</span><span class="m">13</span><span class="o">/</span><span class="m">24</span><span class="o">)*</span><span class="n">k</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="o">)*</span><span class="n">k</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">72</span><span class="o">)*</span><span class="n">k</span><span class="o">^</span><span class="m">3</span>
+5/18 + (13/24)*k + (1/6)*k^2 + (1/72)*k^3
 </pre></div>
 </div>
-<p>The last example shows that the <code class="docutils literal"><span class="pre">Kronecker</span></code> package also supports iterated Kronecked coefficients indexed by four or more partitions.</p>
+<p>The last example shows that the <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> package also supports iterated Kronecked coefficients indexed by four or more partitions.</p>
 </div>
 <div class="section" id="calculate-quasipolynomials-on-a-chamber">
-<span id="calculate-quasipolynomials-on-a-chamber"></span><h2>Calculate quasipolynomials on a chamber<a class="headerlink" href="#calculate-quasipolynomials-on-a-chamber" title="Permalink to this headline">¶</a></h2>
+<h2>Calculate quasipolynomials on a chamber<a class="headerlink" href="#calculate-quasipolynomials-on-a-chamber" title="Permalink to this headline">¶</a></h2>
 <p>Lastly, by providing three symbolic variables we can compute the entire quasipolynomial on the corresponding chamber:</p>
-<div class="highlight-maple"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Kronecker</span><span class="o">([[</span><span class="m">132</span><span class="o">,</span> <span class="m">38</span><span class="o">,</span> <span class="m">19</span><span class="o">,</span> <span class="m">11</span><span class="o">],</span> <span class="o">[</span><span class="m">110</span><span class="o">,</span> <span class="m">90</span><span class="o">],</span> <span class="o">[</span><span class="m">120</span><span class="o">,</span> <span class="m">80</span><span class="o">]],</span> <span class="o">[</span><span class="n">lambda</span><span class="o">,</span> <span class="n">mu</span><span class="o">,</span> <span class="n">nu</span><span class="o">]);</span>
+<div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[132, 38, 19, 11], [110, 90], [120, 80]], [lambda, mu, nu]);
 
-<span class="m">3</span><span class="o">/</span><span class="m">4</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">8</span><span class="o">)*(-</span><span class="m">1</span><span class="o">)^(</span><span class="n">lambda</span><span class="o">[</span><span class="m">4</span><span class="o">]+</span><span class="n">mu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">-</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">4</span><span class="o">]*</span><span class="n">mu</span><span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">-</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">4</span><span class="o">]*</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">4</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">4</span><span class="o">]^</span><span class="m">2</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">4</span><span class="o">]*</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]</span> <span class="o">-</span> <span class="n">lambda</span><span class="o">[</span><span class="m">4</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">mu</span><span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">-</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">-</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">4</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]^</span><span class="m">2</span> <span class="o">-</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]*</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]*</span><span class="n">mu</span><span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="o">)*</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]*</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]</span> <span class="o">+</span> <span class="o">(</span><span class="m">1</span><span class="o">/</span><span class="m">8</span><span class="o">)*(-</span><span class="m">1</span><span class="o">)^(</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]+</span><span class="n">mu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">])</span>
+3/4 + (1/8)*(-1)^(lambda[4]+mu[1]+lambda[2]+nu[1]) - (1/2)*lambda[4]*mu[1] - (1/2)*lambda[4]*lambda[2] + (1/4)*lambda[4]^2 + (1/2)*lambda[4]*nu[1] + (1/2)*lambda[2] + (1/2)*lambda[3] - lambda[4] + (1/2)*mu[1] - (1/2)*nu[1] - (1/4)*lambda[3]^2 - (1/2)*lambda[3]*nu[1] + (1/2)*lambda[3]*mu[1] + (1/2)*lambda[3]*lambda[2] + (1/8)*(-1)^(lambda[3]+mu[1]+lambda[2]+nu[1])
 </pre></div>
 </div>
 <p>Sometimes, the chamber and hence the quasipolynomial are not uniquely determined, because the given partition triple sits on a wall between two chambers.
-In other cases, such as in the following, the chamber is uniquely determined, but <code class="docutils literal"><span class="pre">Kronecker</span></code> is not aware of it since the partition triple sits on the boundary of the Kirwan cone.
-In either case the <code class="docutils literal"><span class="pre">forceperturb</span></code> option can be used to go ahead and select a chamber:</p>
-<div class="highlight-maple"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">factor</span><span class="o">(</span><span class="n">Kronecker</span><span class="o">([[</span><span class="m">288</span><span class="o">,</span> <span class="m">192</span><span class="o">,</span> <span class="m">174</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="m">30</span><span class="o">,</span> <span class="m">6</span><span class="o">],</span> <span class="o">[</span><span class="m">343</span><span class="o">,</span> <span class="m">270</span><span class="o">,</span> <span class="m">197</span><span class="o">],</span> <span class="o">[</span><span class="m">654</span><span class="o">,</span> <span class="m">156</span><span class="o">]],</span> <span class="o">[</span><span class="n">lambda</span><span class="o">,</span> <span class="n">mu</span><span class="o">,</span> <span class="n">nu</span><span class="o">],</span> <span class="n">forceperturb</span> <span class="o">=</span> <span class="k">true</span><span class="o">));</span>
+In other cases, such as in the following, the chamber is uniquely determined, but <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> is not aware of it since the partition triple sits on the boundary of the Kirwan cone.
+In either case the <code class="docutils literal notranslate"><span class="pre">forceperturb</span></code> option can be used to go ahead and select a chamber:</p>
+<div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; factor(Kronecker([[288, 192, 174, 120, 30, 6], [343, 270, 197], [654, 156]], [lambda, mu, nu], forceperturb = true));
 
-<span class="m">1</span><span class="o">/</span><span class="m">5040</span> <span class="o">*</span> <span class="o">(-</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="m">7</span><span class="o">+</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">])</span> <span class="o">*</span> <span class="o">(-</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="m">6</span><span class="o">+</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">*</span> <span class="o">(-</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="m">5</span><span class="o">+</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">*</span> <span class="o">(-</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="m">4</span><span class="o">+</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">*</span> <span class="o">(-</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="m">3</span><span class="o">+</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">*</span> <span class="o">(-</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="m">2</span><span class="o">+</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">*</span> <span class="o">(-</span><span class="n">nu</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="m">1</span><span class="o">+</span><span class="n">lambda</span><span class="o">[</span><span class="m">3</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">])</span> <span class="o">*</span> <span class="o">(</span><span class="n">lambda</span><span class="o">[</span><span class="m">1</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">4</span><span class="o">]+</span><span class="n">lambda</span><span class="o">[</span><span class="m">5</span><span class="o">]-</span><span class="n">mu</span><span class="o">[</span><span class="m">1</span><span class="o">]-</span><span class="n">mu</span><span class="o">[</span><span class="m">2</span><span class="o">]+</span><span class="m">1</span><span class="o">)</span>
+1/5040 * (-nu[1]+7+lambda[1]+lambda[2]+lambda[3]) * (-nu[1]+6+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+5+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+4+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+3+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+2+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+1+lambda[3]+lambda[2]+lambda[1]) * (lambda[1]+lambda[2]+lambda[4]+lambda[5]-mu[1]-mu[2]+1)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="attribution">
-<span id="attribution"></span><h1>Attribution<a class="headerlink" href="#attribution" title="Permalink to this headline">¶</a></h1>
+<h1>Attribution<a class="headerlink" href="#attribution" title="Permalink to this headline">¶</a></h1>
 <p>If you find this software useful in your research please consider citing our paper:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>@article{kronecker,
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@article{kronecker,
   title={Computation of dilated Kronecker coefficients},
   author={Baldoni, Velleda and Vergne, Mich{\`e}le},
   journal={Journal of Symbolic Computation},
   year={2017},
   doi={10.1016/j.jsc.2017.03.005},
   eprint={1601.04325},
-  note={In press. With an appendix by Michael Walter. Software available at \url{https://catch22.github.io/kronecker/}.},
+  note={In press. With an appendix by Michael Walter. Software available at \url{https://amsqi.github.io/kronecker/}.},
 }
 </pre></div>
 </div>
 </div>
 <div class="section" id="see-also">
-<span id="see-also"></span><h1>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h1>
+<h1>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/catch22/barvikron">barvikron</a>: a Python package for efficiently computing Kronecker coefficients (using Barvinok&#8217;s algorithm to evaluate characters rather than the iterated residues used here)</li>
-<li><a class="reference external" href="http://wwwmathlabo.univ-poitiers.fr/~maavl/LiE/">LiE</a>: a computer algebra system for reductive Lie group computations</li>
-<li><a class="reference external" href="http://sagemath.org/">SageMath</a>: a computer algebra system which includes support for <a class="reference external" href="http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/sf/sfa.html#sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic_Element.itensor">symmetric functions</a></li>
+<li><p><a class="reference external" href="https://github.com/amsqi/barvikron">barvikron</a>: a Python package for efficiently computing Kronecker coefficients (using Barvinok’s algorithm to evaluate characters rather than the iterated residues used here)</p></li>
+<li><p><a class="reference external" href="http://wwwmathlabo.univ-poitiers.fr/~maavl/LiE/">LiE</a>: a computer algebra system for reductive Lie group computations</p></li>
+<li><p><a class="reference external" href="http://sagemath.org/">SageMath</a>: a computer algebra system which includes support for <a class="reference external" href="http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/sf/sfa.html#sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic_Element.itensor">symmetric functions</a></p></li>
 </ul>
 </div>
 
 
           </div>
+          
       </div>
       <div class="clearer"></div>
     </div>
