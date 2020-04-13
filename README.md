@@ -1,19 +1,19 @@
-# A Maple package for Kronecker coefficients [![arXiv](http://img.shields.io/badge/arXiv-1601.04325-blue.svg?style=flat)](http://arxiv.org/abs/1601.04325) [![download](https://img.shields.io/badge/download-zip-red.svg?style=flat)](https://github.com/catch22/kronecker/zipball/master)
+# A Maple package for Kronecker coefficients [![arXiv](https://img.shields.io/badge/arxiv-1601.04325-blue)](http://arxiv.org/abs/1601.04325) [![download](https://img.shields.io/badge/download-zip-red)](https://github.com/amsqi/kronecker/zipball/master)
 
 `Kronecker` is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by [Baldoni-Vergne-Walter (2017)](http://arxiv.org/abs/1601.04325). `Kronecker` works just as well symbolically, computing *dilated* or *stretched* Kronecker coefficients g(kλ,kμ,kν) and even the entire *quasipolynomial* on a polyhedral chamber of (λ,μ,ν)'s.
 
 
 # Getting started
 
-Download the zip file [**here**](https://github.com/catch22/kronecker/zipball/master), unpack it, and run the `GettingStarted.mw` worksheet.
+Download the zip file [**here**](https://github.com/amsqi/kronecker/zipball/master), unpack it, and run the `GettingStarted.mw` worksheet.
 You should see the following code and output at the top of the file:
 ```maple
 > restart:
   read "Kronecker.mpl":
 
-Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://github.com/catch22/kronecker for more information).
+Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://github.com/amsqi/kronecker for more information).
 ```
-If you instead see an error message please let us now by [opening a new bug report](https://github.com/catch22/kronecker/issues/new).
+If you instead see an error message please let us now by [opening a new bug report](https://github.com/amsqi/kronecker/issues/new).
 The worksheet also contains the following illustrative examples demonstrating the functionality of the Kronecker package:
 
 ## Calculate individual coefficients
@@ -107,13 +107,13 @@ If you find this software useful in your research please consider citing our pap
   year={2017},
   doi={10.1016/j.jsc.2017.03.005},
   eprint={1601.04325},
-  note={In press. With an appendix by Michael Walter. Software available at \url{https://catch22.github.io/kronecker/}.},
+  note={In press. With an appendix by Michael Walter. Software available at \url{https://amsqi.github.io/kronecker/}.},
 }
 ```
 
 
 # See also
 
-- [barvikron](https://github.com/catch22/barvikron): a Python package for efficiently computing Kronecker coefficients (using Barvinok's algorithm to evaluate characters rather than the iterated residues used here)
+- [barvikron](https://github.com/amsqi/barvikron): a Python package for efficiently computing Kronecker coefficients (using Barvinok's algorithm to evaluate characters rather than the iterated residues used here)
 - [LiE](http://wwwmathlabo.univ-poitiers.fr/~maavl/LiE/): a computer algebra system for reductive Lie group computations
 - [SageMath](http://sagemath.org/): a computer algebra system which includes support for [symmetric functions](http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/sf/sfa.html#sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic_Element.itensor)

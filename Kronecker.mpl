@@ -16,7 +16,7 @@ VERSION := "v1.0";
 ##############################################################################
 if not interface(quiet) then
   printf("Kronecker %s by Velleda Baldoni, Michèle Vergne, Michael Walter ", VERSION);
-  printf("(see https://github.com/catch22/kronecker for more information).\n");
+  printf("(see https://github.com/amsqi/kronecker for more information).\n");
 end if;
 
 
