@@ -1,17 +1,17 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>A Maple package for Kronecker coefficients</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="search" title="Search" href="search.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -28,24 +28,24 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="a-maple-package-for-kronecker-coefficients-arxiv-download">
-<h1>A Maple package for Kronecker coefficients <a class="reference external" href="http://arxiv.org/abs/1601.04325"><img alt="arXiv" src="https://img.shields.io/badge/arxiv-1601.04325-blue" /></a> <a class="reference external" href="https://github.com/amsqi/kronecker/zipball/master"><img alt="download" src="https://img.shields.io/badge/download-zip-red" /></a><a class="headerlink" href="#a-maple-package-for-kronecker-coefficients-arxiv-download" title="Permalink to this headline">¶</a></h1>
+  <section id="a-maple-package-for-kronecker-coefficients-arxiv-download">
+<h1>A Maple package for Kronecker coefficients <a class="reference external" href="http://arxiv.org/abs/1601.04325"><img alt="arXiv" src="https://img.shields.io/badge/arxiv-1601.04325-blue" /></a> <a class="reference external" href="https://github.com/qi-rub/kronecker/zipball/master"><img alt="download" src="https://img.shields.io/badge/download-zip-red" /></a><a class="headerlink" href="#a-maple-package-for-kronecker-coefficients-arxiv-download" title="Permalink to this heading">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> is a Maple package for computing Kronecker coefficients g(λ,μ,ν). It implements a highly optimized version of the algorithm proposed by <a class="reference external" href="http://arxiv.org/abs/1601.04325">Baldoni-Vergne-Walter (2017)</a>. <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> works just as well symbolically, computing <em>dilated</em> or <em>stretched</em> Kronecker coefficients g(kλ,kμ,kν) and even the entire <em>quasipolynomial</em> on a polyhedral chamber of (λ,μ,ν)’s.</p>
-</div>
-<div class="section" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>Download the zip file <a class="reference external" href="https://github.com/amsqi/kronecker/zipball/master"><strong>here</strong></a>, unpack it, and run the <code class="docutils literal notranslate"><span class="pre">GettingStarted.mw</span></code> worksheet.
+</section>
+<section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
+<p>Download the zip file <a class="reference external" href="https://github.com/qi-rub/kronecker/zipball/master"><strong>here</strong></a>, unpack it, and run the <code class="docutils literal notranslate"><span class="pre">GettingStarted.mw</span></code> worksheet.
 You should see the following code and output at the top of the file:</p>
 <div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; restart:
   read &quot;Kronecker.mpl&quot;:
 
-Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://github.com/amsqi/kronecker for more information).
+Kronecker v1.0 by Velleda Baldoni, Michèle Vergne, Michael Walter (see https://github.com/qi-rub/kronecker for more information).
 </pre></div>
 </div>
-<p>If you instead see an error message please let us now by <a class="reference external" href="https://github.com/amsqi/kronecker/issues/new">opening a new bug report</a>.
+<p>If you instead see an error message please let us now by <a class="reference external" href="https://github.com/qi-rub/kronecker/issues/new">opening a new bug report</a>.
 The worksheet also contains the following illustrative examples demonstrating the functionality of the Kronecker package:</p>
-<div class="section" id="calculate-individual-coefficients">
-<h2>Calculate individual coefficients<a class="headerlink" href="#calculate-individual-coefficients" title="Permalink to this headline">¶</a></h2>
+<section id="calculate-individual-coefficients">
+<h2>Calculate individual coefficients<a class="headerlink" href="#calculate-individual-coefficients" title="Permalink to this heading">¶</a></h2>
 <p>Pass a list of partitions [λ,μ,ν] to <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> to compute the corresponding Kronecker coefficient g(λ,μ,ν):</p>
 <div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[131, 39, 19, 11], [110, 90], [120, 80]]);
 
@@ -61,9 +61,9 @@ The worksheet also contains the following illustrative examples demonstrating th
 </pre></div>
 </div>
 <p>This last example is a branching problem for SL(9) and hence might take a little while to compute (around 6 minutes).</p>
-</div>
-<div class="section" id="calculate-dilated-coefficients">
-<h2>Calculate dilated coefficients<a class="headerlink" href="#calculate-dilated-coefficients" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calculate-dilated-coefficients">
+<h2>Calculate dilated coefficients<a class="headerlink" href="#calculate-dilated-coefficients" title="Permalink to this heading">¶</a></h2>
 <p>By providing an additional symbolic parameter to <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code>, we can instead compute the dilated Kronecker coefficient, i.e., the quasipolynomial function p(k) = g(kλ,kμ,kν):</p>
 <div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[10, 6, 2], [10, 8], [11, 7]], k);
 
@@ -94,9 +94,9 @@ The worksheet also contains the following illustrative examples demonstrating th
 </pre></div>
 </div>
 <p>The last example shows that the <code class="docutils literal notranslate"><span class="pre">Kronecker</span></code> package also supports iterated Kronecked coefficients indexed by four or more partitions.</p>
-</div>
-<div class="section" id="calculate-quasipolynomials-on-a-chamber">
-<h2>Calculate quasipolynomials on a chamber<a class="headerlink" href="#calculate-quasipolynomials-on-a-chamber" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calculate-quasipolynomials-on-a-chamber">
+<h2>Calculate quasipolynomials on a chamber<a class="headerlink" href="#calculate-quasipolynomials-on-a-chamber" title="Permalink to this heading">¶</a></h2>
 <p>Lastly, by providing three symbolic variables we can compute the entire quasipolynomial on the corresponding chamber:</p>
 <div class="highlight-maple notranslate"><div class="highlight"><pre><span></span>&gt; Kronecker([[132, 38, 19, 11], [110, 90], [120, 80]], [lambda, mu, nu]);
 
@@ -111,10 +111,10 @@ In either case the <code class="docutils literal notranslate"><span class="pre">
 1/5040 * (-nu[1]+7+lambda[1]+lambda[2]+lambda[3]) * (-nu[1]+6+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+5+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+4+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+3+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+2+lambda[3]+lambda[2]+lambda[1]) * (-nu[1]+1+lambda[3]+lambda[2]+lambda[1]) * (lambda[1]+lambda[2]+lambda[4]+lambda[5]-mu[1]-mu[2]+1)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="attribution">
-<h1>Attribution<a class="headerlink" href="#attribution" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section id="attribution">
+<h1>Attribution<a class="headerlink" href="#attribution" title="Permalink to this heading">¶</a></h1>
 <p>If you find this software useful in your research please consider citing our paper:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@article{kronecker,
   title={Computation of dilated Kronecker coefficients},
@@ -123,19 +123,19 @@ In either case the <code class="docutils literal notranslate"><span class="pre">
   year={2017},
   doi={10.1016/j.jsc.2017.03.005},
   eprint={1601.04325},
-  note={In press. With an appendix by Michael Walter. Software available at \url{https://amsqi.github.io/kronecker/}.},
+  note={In press. With an appendix by Michael Walter. Software available at \url{https://qi-rub.github.io/kronecker/}.},
 }
 </pre></div>
 </div>
-</div>
-<div class="section" id="see-also">
-<h1>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="see-also">
+<h1>See also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/amsqi/barvikron">barvikron</a>: a Python package for efficiently computing Kronecker coefficients (using Barvinok’s algorithm to evaluate characters rather than the iterated residues used here)</p></li>
+<li><p><a class="reference external" href="https://github.com/qi-rub/barvikron">barvikron</a>: a Python package for efficiently computing Kronecker coefficients (using Barvinok’s algorithm to evaluate characters rather than the iterated residues used here)</p></li>
 <li><p><a class="reference external" href="http://wwwmathlabo.univ-poitiers.fr/~maavl/LiE/">LiE</a>: a computer algebra system for reductive Lie group computations</p></li>
 <li><p><a class="reference external" href="http://sagemath.org/">SageMath</a>: a computer algebra system which includes support for <a class="reference external" href="http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/sf/sfa.html#sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic_Element.itensor">symmetric functions</a></p></li>
 </ul>
-</div>
+</section>
 
 
           </div>
@@ -149,7 +149,7 @@ In either case the <code class="docutils literal notranslate"><span class="pre">
     </div>
 
     
-    <a href="https://github.com/catch22/kronecker" class="github">
+    <a href="https://github.com/qi-rub/kronecker" class="github">
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
     </a>
     
